@@ -1,0 +1,86 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background-color: black;
+}
+
+body{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-content: center;
+}
+
+h1{
+	font-size: 2.5rem;
+	margin: 1rem 0 3rem;
+	text-align: center;
+	color: red;
+}
+
+.styling{
+	font-weight: bold;
+	color: yellow;
+}
+
+
+
+.input_div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+ul{
+	padding: 25px;
+	outline: none;
+	background-color: none;
+	font-size: 1.2rem;
+	color: white;
+	font-weight: bold;
+	display: block;
+}
+
+#addButton {
+	height: 30px;
+	width: 75px;
+	border-radius: 25px;
+	outline: none;
+	cursor: pointer;
+	background-color: green;
+	font-weight: 1000;
+	color: white;
+}
+
+#clearAll {
+	height: 30px;
+	width: 75px;
+	border-radius: 25px;
+	outline: none;
+	cursor: pointer;
+	background-color: red;
+	color: white;
+	font-weight: 1000;
+}
+
+#inputTask {
+	border-radius: 25px;
+	height: 30px;
+	width: 250px;
+	color: red;
+	font-weight: 1000;
+	background-color: yellow;
+}
+.done{
+	text-decoration: line-through;
+	color: gold;
+}
+.buttons{
+	display: flex;
+	flex-direction: row;
+}

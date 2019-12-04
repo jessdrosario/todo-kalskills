@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LazinessKILLER</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1><span class="styling">Laziness</span>KILLER</h1>
+	<div class="container">
+		<div class="input_div">
+			<div class="buttons">
+				<input id="inputTask" type="text" placeholder="What's your activity today?">
+				<button id="addButton">Submit</button>
+				<button id="clearAll" onclick="removeAll()">Clear</button>
+			</div>
+			<ul id="actList" style="list-style: none;">
+			</ul>
+		</div>
+	</div>	
+	<script>
+		window.alert("Let's get your day done with LazinessKILLER");
+		document.getElementById("addButton").addEventListener("click", add);
+
+		function removeAll(){
+			document.getElementById("actList").innerHTML = "";
+		};
+
+		document.getElementById("inputTask").addEventListener("keydown", function(event){
+			if(event.keyCode === 13){
+				add();
+			}
+		});
+
+		function add(){
+			var task = document.getElementById("inputTask");
+			if (task.value.trim() <= 0)
+				return;
+			var actlist = document.getElementById("actList");
+			var inputVal = task.value;
+			var textNode = document.createTextNode(inputVal);
+			var newAct = document.createElement("li");
+
+			var checkBtn = document.createElement("input");
+			checkBtn.type = "checkbox";
+			checkBtn.style = ("cursor: pointer; margin-left: 5px; margin-right: 5px;")
+			checkBtn.addEventListener("click", function(){
+				if(newAct.classList.toggle("done"));
+			});
+
+
+			var editBtn = document.createElement("Button");
+			editBtn.appendChild(document.createTextNode("Edit"));
+			editBtn.style = ("color: white; width: 50px; background-color: green; cursor: pointer; border-radius: 10px;");
+			editBtn.addEventListener("click", function(){
+				textNode.data = prompt("What's Wrong?");
+			});
+
+
+			var removeBtn = document.createElement("Button");
+			removeBtn.appendChild(document.createTextNode("Remove"));
+			removeBtn.style = ("color: white; background-color: red; width: 60px; cursor: pointer; border-radius:10px;");
+			removeBtn.addEventListener("click", function(){
+				newAct.remove();
+			});
+
+			newAct.appendChild(textNode);
+			newAct.appendChild(checkBtn);
+			newAct.appendChild(editBtn);
+			newAct.appendChild(removeBtn);
+			actList.appendChild(newAct);
+			task.value = "";
+		}
+	</script>
+</body>
+</html>
